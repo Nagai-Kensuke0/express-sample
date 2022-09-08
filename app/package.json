@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "ts-node-dev --respawn src/app.ts",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
+    "build": "npm-run-all clean tsc",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -14,9 +18,15 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.13",
+    "@types/http-errors": "^1.8.2",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^18.7.13",
+    "npm-run-all": "^4.1.5",
     "prisma": "^4.2.1",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.7.4"
   }
 }

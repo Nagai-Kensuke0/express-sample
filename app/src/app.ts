@@ -40,8 +40,9 @@ app.use(function(err: any, req: Request, res: Response, next: NextFunction) {
   res.render('error');
 });
 
-module.exports = app;
-
-app.listen(3000, () => {
-  console.log("Start on port 3000.")
+const port = 3000
+app.listen(port, () => {
+  console.log(`Start on port ${port}.`)
 })
+
+module.exports = app;

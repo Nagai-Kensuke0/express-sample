@@ -1,6 +1,7 @@
 version: '3'
 services:
   db:
+    container_name: express-sample-db
     image: mysql:8.0
     # container_name: mysql_host
     environment:
@@ -15,6 +16,7 @@ services:
       - 3306:3306
 
   app:
+    container_name: express-sample-api
     build:
       context: ./app
       dockerfile: ./Dockerfile

@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es2020",
     "module": "commonjs",
     "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],  // import { prisma } from "@/includes/prisma" のように書くことが可能
+    },
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,

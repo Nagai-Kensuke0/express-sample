@@ -1,7 +1,10 @@
-import { Request, Response, NextFunction } from "express";
+import { Router, Request, Response, NextFunction } from "express";
+import UsersPost from "../controllers/users/post"
 
 var express = require('express');
-var router = express.Router();
+var router = Router();
+
+router.post('/', UsersPost)
 
 /* GET users listing. */
 router.get('/', function(req: Request, res: Response, next: NextFunction) {

@@ -9,7 +9,7 @@ export default async (
   try{
     const userId = req.params.userId
 
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findUniqueOrThrow({
       where: {
         id: userId
       },
@@ -18,7 +18,6 @@ export default async (
         email: true,
         name: true,
       },
-      rejectOnNotFound: true
     })
 
     res.status(200).json(user)

@@ -1,5 +1,6 @@
 import { Router } from "express";
+import Users from "./users";
 
 export default function (router: Router): void {
-  require("./users").default(router);
+  Users(router);
 }

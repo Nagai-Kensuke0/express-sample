@@ -1,4 +1,4 @@
-import { prisma } from "@/includes/prisma"
+import { prisma } from "@/includes/prisma";
 import { Request, Response, NextFunction } from "express";
 
 export default async (
@@ -6,17 +6,17 @@ export default async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  try{
-    const userId = req.params.userId
-    
+  try {
+    const userId = req.params.userId;
+
     await prisma.user.delete({
       where: {
-        id: userId
-      }
-    })
+        id: userId,
+      },
+    });
 
-    res.status(200).json()
-  } catch(error) {
-    next(error)
+    res.status(200).json();
+  } catch (error) {
+    next(error);
   }
-}
+};

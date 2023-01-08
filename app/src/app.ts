@@ -1,21 +1,12 @@
 import express, { Request, Response, NextFunction } from "express";
-import path from "path";
 import routes from "./routes";
 import logger from "morgan";
 import createError from "http-errors";
-import cookieParser from "cookie-parser";
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev')); // logのmiddleware、response statusごとに色分けする
+app.use(express.json());  // JSONをパースするミドルウェア
 
 const router = express.Router();
 routes(router)

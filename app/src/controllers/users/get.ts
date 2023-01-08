@@ -1,4 +1,4 @@
-import { prisma } from "@/includes/prisma"
+import { prisma } from "@/includes/prisma";
 import { Request, Response, NextFunction } from "express";
 
 export default async (
@@ -6,17 +6,17 @@ export default async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  try{
+  try {
     const users = await prisma.user.findMany({
       select: {
         id: true,
         email: true,
         name: true,
       },
-    })
+    });
 
-    res.status(200).json(users)
-  } catch(error) {
-    next(error)
+    res.status(200).json(users);
+  } catch (error) {
+    next(error);
   }
-}
+};

@@ -13,8 +13,8 @@
 
 ## 取り組んだ内容
 
-・TypeScript の導入
-・Prisma の導入
-・Prisma を用いた DB 操作の実装（ユーザーの登録/一覧取得/単体取得/削除）
-・ESLint の導入
-・Prettier の導入
+- TypeScript の導入
+- Prisma の導入
+- Prisma を用いた DB 操作の実装（ユーザーの登録/一覧取得/単体取得/削除）
+- ESLint の導入
+- Prettier の導入
